@@ -4,6 +4,8 @@
 
 ##### In . /checkpoints and . /submission folders have our run logs and submission files, respectively.
 
+##### This submission can be reproduced manually by following the actions below, or by directly using the one-click run script run.sh
+
 ### Data Preparation
 
 1. Download the datasets at: https://recsys.westlake.edu.cn/MicroLens_1M_MMCTR
