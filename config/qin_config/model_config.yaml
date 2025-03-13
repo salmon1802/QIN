@@ -14,7 +14,7 @@ Base:
 
 DIN_default: # This is a config template
     model: DIN
-    dataset_id: MicroLens_1M_x1_with_userid
+    dataset_id: MicroLens_1M_x1
     loss: 'binary_crossentropy'
     metrics: [AUC, logloss]
     task: binary_classification
@@ -43,7 +43,7 @@ DIN_default: # This is a config template
 
 QIN_variety_v9: # This is a config template 97.01
     model: QIN_variety_v9
-    dataset_id: MicroLens_1M_x1_v1
+    dataset_id: MicroLens_1M_x1
     loss: 'binary_crossentropy'
     metrics: [AUC, logloss]
     task: binary_classification
