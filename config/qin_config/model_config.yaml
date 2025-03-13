@@ -1,0 +1,95 @@
+Base:
+    model_root: './checkpoints/'
+    num_workers: 8
+    verbose: 1
+    early_stop_patience: 5
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: user_id
+    use_features: null
+    feature_specs: null
+    feature_config: null
+
+DIN_default: # This is a config template
+    model: DIN
+    dataset_id: MicroLens_1M_x1_with_userid
+    loss: 'binary_crossentropy'
+    metrics: [AUC, logloss]
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.0e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 64
+    dnn_hidden_units: [1024, 512, 256]
+    dnn_activations: ReLU
+    attention_hidden_units: [512, 256]
+    attention_hidden_activations: ReLU
+    attention_output_activation: null
+    attention_dropout: 0.1
+    din_use_softmax: False
+    net_dropout: 0
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 20242025
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+    max_len: 64
+    accumulation_steps: 1
+
+QIN_variety_v9: # This is a config template 97.01
+    model: QIN_variety_v9
+    dataset_id: MicroLens_1M_x1_v1
+    loss: 'binary_crossentropy'
+    metrics: [AUC, logloss]
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 2.e-3
+    embedding_regularizer: 2.e-4
+    net_regularizer: 0
+    batch_size: 8192
+    embedding_dim: 64
+    num_layers: 4
+    num_row: 4
+    net_dropout: 0.1
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 20242025
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+    max_len: 64
+    early_stop_patience: 8
+    accumulation_steps: 1
+    factor: 0.5
+
+QIN_variety_v12: # This is a config template
+    model: QIN_variety_v12
+    dataset_id: MicroLens_1M_x1
+    loss: 'binary_crossentropy'
+    metrics: [AUC, logloss]
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 2.e-3
+    embedding_regularizer: 2.e-4
+    net_regularizer: 0
+    batch_size: 8192
+    embedding_dim: 128
+    num_layers1: 4
+    num_row1: 3
+    num_layers2: 4
+    num_row2: 3
+    net_dropout: 0.1
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 20242025
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+    max_len: 64
+    accumulation_steps: 1
+    factor: 0.5
