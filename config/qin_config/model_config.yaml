@@ -52,7 +52,7 @@ QIN_variety_v9: # This is a config template 97.01
     embedding_regularizer: 2.e-4
     net_regularizer: 0
     batch_size: 8192
-    embedding_dim: 64
+    embedding_dim: 128
     num_layers: 4
     num_row: 4
     net_dropout: 0.1
