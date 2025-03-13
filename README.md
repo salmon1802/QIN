@@ -2,7 +2,7 @@
 
 ## 🔥 Follow to perfectly reproduce the results of this code.
 
-#####In . /checkpoints and . /submission folders have our run logs and submission files, respectively.
+##### In . /checkpoints and . /submission folders have our run logs and submission files, respectively.
 
 ### Data Preparation
 
