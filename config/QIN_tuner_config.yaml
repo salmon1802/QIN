@@ -28,7 +28,5 @@ tuner_space:
     learning_rate: [2.e-3]
     net_dropout: [0.1]
     batch_norm: True
-    num_layers1: [2, 3, 4]
-    num_row1: [2, 3, 4]
-    num_layers2: [2, 3, 4]
-    num_row2: [2, 3, 4]
+    num_layers: [4]
+    num_row: [3, 4]
