@@ -1,0 +1,259 @@
+2025-03-10 13:55:11,834 P100861 INFO FuxiCTR version: 2.3.7
+2025-03-10 13:55:11,834 P100861 INFO Params: {
+    "accumulation_steps": "1",
+    "batch_norm": "True",
+    "batch_size": "8192",
+    "data_format": "parquet",
+    "data_root": "./data/",
+    "dataset_id": "MicroLens_1M_x1",
+    "debug_mode": "False",
+    "early_stop_patience": "3",
+    "embedding_dim": "128",
+    "embedding_regularizer": "0.0002",
+    "epochs": "100",
+    "eval_steps": "None",
+    "factor": "0.5",
+    "feature_cols": "[{'active': True, 'dtype': 'int', 'name': 'user_id', 'type': 'meta'}, {'active': True, 'dtype': 'int', 'name': 'item_seq', 'type': 'meta'}, {'active': True, 'dtype': 'int', 'name': 'likes_level', 'type': 'categorical', 'vocab_size': 11}, {'active': True, 'dtype': 'int', 'name': 'views_level', 'type': 'categorical', 'vocab_size': 11}, {'active': True, 'dtype': 'int', 'name': 'item_id', 'source': 'item', 'type': 'categorical', 'vocab_size': 91718}, {'active': True, 'dtype': 'int', 'max_len': 5, 'name': 'item_tags', 'source': 'item', 'type': 'sequence', 'vocab_size': 11740}, {'active': True, 'dtype': 'float', 'embedding_dim': 128, 'name': 'item_emb_d128', 'source': 'item', 'type': 'embedding'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gpu": "0",
+    "group_id": "user_id",
+    "item_info": "./data/MicroLens_1M_x1/item_info.parquet",
+    "label_col": "{'dtype': 'float', 'name': 'label'}",
+    "learning_rate": "0.002",
+    "loss": "binary_crossentropy",
+    "max_len": "64",
+    "metrics": "['AUC', 'logloss']",
+    "model": "QIN_variety_v9",
+    "model_id": "QIN_variety_v9_001_2c8f7a99",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.1",
+    "net_regularizer": "0",
+    "num_heads": "2",
+    "num_layers": "4",
+    "num_row": "3",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "rebuild_dataset": "False",
+    "save_best_only": "True",
+    "seed": "20242025",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "./data/MicroLens_1M_x1/test.parquet",
+    "train_data": "./data/MicroLens_1M_x1/train.parquet",
+    "use_features": "None",
+    "valid_data": "./data/MicroLens_1M_x1/valid.parquet",
+    "verbose": "1"
+}
+2025-03-10 13:55:11,835 P100861 INFO Set up feature processor...
+2025-03-10 13:55:11,835 P100861 INFO Fit feature processor...
+2025-03-10 13:55:11,835 P100861 INFO Processing column: {'active': True, 'dtype': 'int', 'name': 'user_id', 'type': 'meta'}
+2025-03-10 13:55:11,835 P100861 INFO Processing column: {'active': True, 'dtype': 'int', 'name': 'item_seq', 'type': 'meta'}
+2025-03-10 13:55:11,835 P100861 INFO Processing column: {'active': True, 'dtype': 'int', 'name': 'likes_level', 'type': 'categorical', 'vocab_size': 11}
+2025-03-10 13:55:11,836 P100861 INFO Processing column: {'active': True, 'dtype': 'int', 'name': 'views_level', 'type': 'categorical', 'vocab_size': 11}
+2025-03-10 13:55:11,836 P100861 INFO Processing column: {'active': True, 'dtype': 'int', 'name': 'item_id', 'source': 'item', 'type': 'categorical', 'vocab_size': 91718}
+2025-03-10 13:55:11,891 P100861 INFO Processing column: {'active': True, 'dtype': 'int', 'max_len': 5, 'name': 'item_tags', 'source': 'item', 'type': 'sequence', 'vocab_size': 11740}
+2025-03-10 13:55:11,897 P100861 INFO Processing column: {'active': True, 'dtype': 'float', 'embedding_dim': 128, 'name': 'item_emb_d128', 'source': 'item', 'type': 'embedding'}
+2025-03-10 13:55:11,898 P100861 INFO Set column index...
+2025-03-10 13:55:11,898 P100861 INFO Save feature_map to json: ./data/MicroLens_1M_x1/feature_map.json
+2025-03-10 13:55:11,898 P100861 INFO Pickle feature_encode: ./data/MicroLens_1M_x1/feature_processor.pkl
+2025-03-10 13:55:11,905 P100861 INFO Save feature_vocab to json: ./data/MicroLens_1M_x1/feature_vocab.json
+2025-03-10 13:55:12,170 P100861 INFO Set feature processor done.
+2025-03-10 13:55:12,170 P100861 INFO Load feature_map from json: ./data/MicroLens_1M_x1/feature_map.json
+2025-03-10 13:55:12,171 P100861 INFO Set column index...
+2025-03-10 13:55:12,171 P100861 INFO Feature specs: {
+    "item_emb_d128": "{'source': 'item', 'type': 'embedding', 'embedding_dim': 128}",
+    "item_id": "{'source': 'item', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 91718}",
+    "item_seq": "{'type': 'meta'}",
+    "item_tags": "{'source': 'item', 'type': 'sequence', 'feature_encoder': 'layers.MaskedAveragePooling()', 'padding_idx': 0, 'max_len': 5, 'vocab_size': 11740}",
+    "likes_level": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 11}",
+    "user_id": "{'type': 'meta'}",
+    "views_level": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 11}"
+}
+2025-03-10 13:55:12,856 P100861 INFO Total number of parameters: 27045893.
+2025-03-10 13:55:12,856 P100861 INFO Loading datasets...
+2025-03-10 13:55:20,277 P100861 INFO Train samples: total/3600000, blocks/1
+2025-03-10 13:55:21,194 P100861 INFO Validation samples: total/10000, blocks/1
+2025-03-10 13:55:21,194 P100861 INFO Loading train and validation data done.
+2025-03-10 13:55:21,195 P100861 INFO Start training: 440 batches/epoch
+2025-03-10 13:55:21,195 P100861 INFO ************ Epoch=1 start ************
+2025-03-10 13:58:23,229 P100861 INFO Train loss: 0.265499
+2025-03-10 13:58:23,229 P100861 INFO Evaluation @epoch 1 - batch 440: 
+2025-03-10 13:58:25,677 P100861 INFO [Metrics] AUC: 0.881901 - logloss: 0.732351
+2025-03-10 13:58:25,677 P100861 INFO Save best model: monitor(max)=0.881901
+2025-03-10 13:58:25,977 P100861 INFO ************ Epoch=1 end ************
+2025-03-10 14:01:33,516 P100861 INFO Train loss: 0.201342
+2025-03-10 14:01:33,517 P100861 INFO Evaluation @epoch 2 - batch 440: 
+2025-03-10 14:01:36,122 P100861 INFO [Metrics] AUC: 0.932027 - logloss: 0.483416
+2025-03-10 14:01:36,122 P100861 INFO Save best model: monitor(max)=0.932027
+2025-03-10 14:01:36,457 P100861 INFO ************ Epoch=2 end ************
+2025-03-10 14:04:47,014 P100861 INFO Train loss: 0.188932
+2025-03-10 14:04:47,014 P100861 INFO Evaluation @epoch 3 - batch 440: 
+2025-03-10 14:04:49,756 P100861 INFO [Metrics] AUC: 0.940150 - logloss: 0.343377
+2025-03-10 14:04:49,757 P100861 INFO Save best model: monitor(max)=0.940150
+2025-03-10 14:04:50,088 P100861 INFO ************ Epoch=3 end ************
+2025-03-10 14:07:57,438 P100861 INFO Train loss: 0.192499
+2025-03-10 14:07:57,439 P100861 INFO Evaluation @epoch 4 - batch 440: 
+2025-03-10 14:08:00,283 P100861 INFO [Metrics] AUC: 0.948893 - logloss: 0.358690
+2025-03-10 14:08:00,284 P100861 INFO Save best model: monitor(max)=0.948893
+2025-03-10 14:08:00,628 P100861 INFO ************ Epoch=4 end ************
+2025-03-10 14:11:10,432 P100861 INFO Train loss: 0.190022
+2025-03-10 14:11:10,432 P100861 INFO Evaluation @epoch 5 - batch 440: 
+2025-03-10 14:11:13,241 P100861 INFO [Metrics] AUC: 0.949536 - logloss: 0.378729
+2025-03-10 14:11:13,242 P100861 INFO Save best model: monitor(max)=0.949536
+2025-03-10 14:11:13,577 P100861 INFO ************ Epoch=5 end ************
+2025-03-10 14:14:18,280 P100861 INFO Train loss: 0.203496
+2025-03-10 14:14:18,280 P100861 INFO Evaluation @epoch 6 - batch 440: 
+2025-03-10 14:14:21,004 P100861 INFO [Metrics] AUC: 0.946797 - logloss: 0.368981
+2025-03-10 14:14:21,005 P100861 INFO Monitor(max)=0.946797 STOP!
+2025-03-10 14:14:21,005 P100861 INFO Reduce learning rate on plateau: 0.001000
+2025-03-10 14:14:21,127 P100861 INFO ************ Epoch=6 end ************
+2025-03-10 14:17:25,690 P100861 INFO Train loss: 0.132585
+2025-03-10 14:17:25,691 P100861 INFO Evaluation @epoch 7 - batch 440: 
+2025-03-10 14:17:28,423 P100861 INFO [Metrics] AUC: 0.959109 - logloss: 0.372680
+2025-03-10 14:17:28,424 P100861 INFO Save best model: monitor(max)=0.959109
+2025-03-10 14:17:28,755 P100861 INFO ************ Epoch=7 end ************
+2025-03-10 14:20:33,643 P100861 INFO Train loss: 0.098099
+2025-03-10 14:20:33,644 P100861 INFO Evaluation @epoch 8 - batch 440: 
+2025-03-10 14:20:36,284 P100861 INFO [Metrics] AUC: 0.959056 - logloss: 0.333397
+2025-03-10 14:20:36,285 P100861 INFO Monitor(max)=0.959056 STOP!
+2025-03-10 14:20:36,285 P100861 INFO Reduce learning rate on plateau: 0.000500
+2025-03-10 14:20:36,423 P100861 INFO ************ Epoch=8 end ************
+2025-03-10 14:23:41,173 P100861 INFO Train loss: 0.077408
+2025-03-10 14:23:41,174 P100861 INFO Evaluation @epoch 9 - batch 440: 
+2025-03-10 14:23:43,825 P100861 INFO [Metrics] AUC: 0.960209 - logloss: 0.353417
+2025-03-10 14:23:43,826 P100861 INFO Save best model: monitor(max)=0.960209
+2025-03-10 14:23:44,134 P100861 INFO ************ Epoch=9 end ************
+2025-03-10 14:26:50,690 P100861 INFO Train loss: 0.067032
+2025-03-10 14:26:50,691 P100861 INFO Evaluation @epoch 10 - batch 440: 
+2025-03-10 14:26:53,383 P100861 INFO [Metrics] AUC: 0.963788 - logloss: 0.313469
+2025-03-10 14:26:53,384 P100861 INFO Save best model: monitor(max)=0.963788
+2025-03-10 14:26:53,723 P100861 INFO ************ Epoch=10 end ************
+2025-03-10 14:29:59,436 P100861 INFO Train loss: 0.062925
+2025-03-10 14:29:59,437 P100861 INFO Evaluation @epoch 11 - batch 440: 
+2025-03-10 14:30:02,193 P100861 INFO [Metrics] AUC: 0.963912 - logloss: 0.309580
+2025-03-10 14:30:02,194 P100861 INFO Save best model: monitor(max)=0.963912
+2025-03-10 14:30:02,532 P100861 INFO ************ Epoch=11 end ************
+2025-03-10 14:33:09,215 P100861 INFO Train loss: 0.062232
+2025-03-10 14:33:09,215 P100861 INFO Evaluation @epoch 12 - batch 440: 
+2025-03-10 14:33:11,839 P100861 INFO [Metrics] AUC: 0.965443 - logloss: 0.306435
+2025-03-10 14:33:11,839 P100861 INFO Save best model: monitor(max)=0.965443
+2025-03-10 14:33:12,161 P100861 INFO ************ Epoch=12 end ************
+2025-03-10 14:36:17,269 P100861 INFO Train loss: 0.058159
+2025-03-10 14:36:17,270 P100861 INFO Evaluation @epoch 13 - batch 440: 
+2025-03-10 14:36:19,907 P100861 INFO [Metrics] AUC: 0.964844 - logloss: 0.328606
+2025-03-10 14:36:19,907 P100861 INFO Monitor(max)=0.964844 STOP!
+2025-03-10 14:36:19,908 P100861 INFO Reduce learning rate on plateau: 0.000250
+2025-03-10 14:36:20,037 P100861 INFO ************ Epoch=13 end ************
+2025-03-10 14:39:25,994 P100861 INFO Train loss: 0.049576
+2025-03-10 14:39:25,995 P100861 INFO Evaluation @epoch 14 - batch 440: 
+2025-03-10 14:39:28,685 P100861 INFO [Metrics] AUC: 0.965107 - logloss: 0.328537
+2025-03-10 14:39:28,686 P100861 INFO Monitor(max)=0.965107 STOP!
+2025-03-10 14:39:28,686 P100861 INFO Reduce learning rate on plateau: 0.000125
+2025-03-10 14:39:28,832 P100861 INFO ************ Epoch=14 end ************
+2025-03-10 14:42:34,391 P100861 INFO Train loss: 0.042070
+2025-03-10 14:42:34,391 P100861 INFO Evaluation @epoch 15 - batch 440: 
+2025-03-10 14:42:37,092 P100861 INFO [Metrics] AUC: 0.965883 - logloss: 0.332725
+2025-03-10 14:42:37,093 P100861 INFO Save best model: monitor(max)=0.965883
+2025-03-10 14:42:37,427 P100861 INFO ************ Epoch=15 end ************
+2025-03-10 14:45:42,633 P100861 INFO Train loss: 0.038895
+2025-03-10 14:45:42,634 P100861 INFO Evaluation @epoch 16 - batch 440: 
+2025-03-10 14:45:45,446 P100861 INFO [Metrics] AUC: 0.965336 - logloss: 0.355512
+2025-03-10 14:45:45,447 P100861 INFO Monitor(max)=0.965336 STOP!
+2025-03-10 14:45:45,447 P100861 INFO Reduce learning rate on plateau: 0.000063
+2025-03-10 14:45:45,585 P100861 INFO ************ Epoch=16 end ************
+2025-03-10 14:48:50,488 P100861 INFO Train loss: 0.036042
+2025-03-10 14:48:50,489 P100861 INFO Evaluation @epoch 17 - batch 440: 
+2025-03-10 14:48:53,236 P100861 INFO [Metrics] AUC: 0.966204 - logloss: 0.333978
+2025-03-10 14:48:53,237 P100861 INFO Save best model: monitor(max)=0.966204
+2025-03-10 14:48:53,552 P100861 INFO ************ Epoch=17 end ************
+2025-03-10 14:51:58,334 P100861 INFO Train loss: 0.034436
+2025-03-10 14:51:58,334 P100861 INFO Evaluation @epoch 18 - batch 440: 
+2025-03-10 14:52:01,096 P100861 INFO [Metrics] AUC: 0.966680 - logloss: 0.339127
+2025-03-10 14:52:01,097 P100861 INFO Save best model: monitor(max)=0.966680
+2025-03-10 14:52:01,433 P100861 INFO ************ Epoch=18 end ************
+2025-03-10 14:55:06,970 P100861 INFO Train loss: 0.033292
+2025-03-10 14:55:06,971 P100861 INFO Evaluation @epoch 19 - batch 440: 
+2025-03-10 14:55:09,729 P100861 INFO [Metrics] AUC: 0.965582 - logloss: 0.350114
+2025-03-10 14:55:09,730 P100861 INFO Monitor(max)=0.965582 STOP!
+2025-03-10 14:55:09,730 P100861 INFO Reduce learning rate on plateau: 0.000031
+2025-03-10 14:55:09,850 P100861 INFO ************ Epoch=19 end ************
+2025-03-10 14:58:13,696 P100861 INFO Train loss: 0.031528
+2025-03-10 14:58:13,697 P100861 INFO Evaluation @epoch 20 - batch 440: 
+2025-03-10 14:58:16,462 P100861 INFO [Metrics] AUC: 0.966185 - logloss: 0.347082
+2025-03-10 14:58:16,463 P100861 INFO Monitor(max)=0.966185 STOP!
+2025-03-10 14:58:16,463 P100861 INFO Reduce learning rate on plateau: 0.000016
+2025-03-10 14:58:16,595 P100861 INFO ************ Epoch=20 end ************
+2025-03-10 15:01:24,720 P100861 INFO Train loss: 0.030102
+2025-03-10 15:01:24,721 P100861 INFO Evaluation @epoch 21 - batch 440: 
+2025-03-10 15:01:27,476 P100861 INFO [Metrics] AUC: 0.966839 - logloss: 0.359744
+2025-03-10 15:01:27,477 P100861 INFO Save best model: monitor(max)=0.966839
+2025-03-10 15:01:27,804 P100861 INFO ************ Epoch=21 end ************
+2025-03-10 15:04:33,216 P100861 INFO Train loss: 0.029781
+2025-03-10 15:04:33,216 P100861 INFO Evaluation @epoch 22 - batch 440: 
+2025-03-10 15:04:35,864 P100861 INFO [Metrics] AUC: 0.967200 - logloss: 0.353764
+2025-03-10 15:04:35,865 P100861 INFO Save best model: monitor(max)=0.967200
+2025-03-10 15:04:36,183 P100861 INFO ************ Epoch=22 end ************
+2025-03-10 15:07:41,583 P100861 INFO Train loss: 0.029198
+2025-03-10 15:07:41,583 P100861 INFO Evaluation @epoch 23 - batch 440: 
+2025-03-10 15:07:44,286 P100861 INFO [Metrics] AUC: 0.968004 - logloss: 0.341949
+2025-03-10 15:07:44,287 P100861 INFO Save best model: monitor(max)=0.968004
+2025-03-10 15:07:44,629 P100861 INFO ************ Epoch=23 end ************
+2025-03-10 15:10:50,306 P100861 INFO Train loss: 0.028632
+2025-03-10 15:10:50,307 P100861 INFO Evaluation @epoch 24 - batch 440: 
+2025-03-10 15:10:53,004 P100861 INFO [Metrics] AUC: 0.968631 - logloss: 0.328516
+2025-03-10 15:10:53,005 P100861 INFO Save best model: monitor(max)=0.968631
+2025-03-10 15:10:53,340 P100861 INFO ************ Epoch=24 end ************
+2025-03-10 15:13:59,291 P100861 INFO Train loss: 0.028098
+2025-03-10 15:13:59,291 P100861 INFO Evaluation @epoch 25 - batch 440: 
+2025-03-10 15:14:01,972 P100861 INFO [Metrics] AUC: 0.968407 - logloss: 0.340984
+2025-03-10 15:14:01,973 P100861 INFO Monitor(max)=0.968407 STOP!
+2025-03-10 15:14:01,973 P100861 INFO Reduce learning rate on plateau: 0.000008
+2025-03-10 15:14:02,116 P100861 INFO ************ Epoch=25 end ************
+2025-03-10 15:17:06,415 P100861 INFO Train loss: 0.027396
+2025-03-10 15:17:06,415 P100861 INFO Evaluation @epoch 26 - batch 440: 
+2025-03-10 15:17:09,063 P100861 INFO [Metrics] AUC: 0.968683 - logloss: 0.343234
+2025-03-10 15:17:09,064 P100861 INFO Save best model: monitor(max)=0.968683
+2025-03-10 15:17:09,435 P100861 INFO ************ Epoch=26 end ************
+2025-03-10 15:20:15,293 P100861 INFO Train loss: 0.027105
+2025-03-10 15:20:15,294 P100861 INFO Evaluation @epoch 27 - batch 440: 
+2025-03-10 15:20:18,045 P100861 INFO [Metrics] AUC: 0.968628 - logloss: 0.336535
+2025-03-10 15:20:18,045 P100861 INFO Monitor(max)=0.968628 STOP!
+2025-03-10 15:20:18,046 P100861 INFO Reduce learning rate on plateau: 0.000004
+2025-03-10 15:20:18,167 P100861 INFO ************ Epoch=27 end ************
+2025-03-10 15:23:23,454 P100861 INFO Train loss: 0.026705
+2025-03-10 15:23:23,455 P100861 INFO Evaluation @epoch 28 - batch 440: 
+2025-03-10 15:23:26,256 P100861 INFO [Metrics] AUC: 0.969521 - logloss: 0.332417
+2025-03-10 15:23:26,257 P100861 INFO Save best model: monitor(max)=0.969521
+2025-03-10 15:23:26,580 P100861 INFO ************ Epoch=28 end ************
+2025-03-10 15:26:31,806 P100861 INFO Train loss: 0.026512
+2025-03-10 15:26:31,806 P100861 INFO Evaluation @epoch 29 - batch 440: 
+2025-03-10 15:26:34,578 P100861 INFO [Metrics] AUC: 0.968096 - logloss: 0.338504
+2025-03-10 15:26:34,578 P100861 INFO Monitor(max)=0.968096 STOP!
+2025-03-10 15:26:34,579 P100861 INFO Reduce learning rate on plateau: 0.000002
+2025-03-10 15:26:34,709 P100861 INFO ************ Epoch=29 end ************
+2025-03-10 15:29:39,344 P100861 INFO Train loss: 0.026239
+2025-03-10 15:29:39,345 P100861 INFO Evaluation @epoch 30 - batch 440: 
+2025-03-10 15:29:42,143 P100861 INFO [Metrics] AUC: 0.967987 - logloss: 0.347644
+2025-03-10 15:29:42,144 P100861 INFO Monitor(max)=0.967987 STOP!
+2025-03-10 15:29:42,144 P100861 INFO Reduce learning rate on plateau: 0.000001
+2025-03-10 15:29:42,290 P100861 INFO ************ Epoch=30 end ************
+2025-03-10 15:32:50,680 P100861 INFO Train loss: 0.026239
+2025-03-10 15:32:50,680 P100861 INFO Evaluation @epoch 31 - batch 440: 
+2025-03-10 15:32:53,458 P100861 INFO [Metrics] AUC: 0.967514 - logloss: 0.347396
+2025-03-10 15:32:53,459 P100861 INFO Monitor(max)=0.967514 STOP!
+2025-03-10 15:32:53,459 P100861 INFO Reduce learning rate on plateau: 0.000001
+2025-03-10 15:32:53,459 P100861 INFO ********* Epoch=31 early stop *********
+2025-03-10 15:32:53,595 P100861 INFO Training finished.
+2025-03-10 15:32:53,596 P100861 INFO Load best model: /root/autodl-tmp/checkpoints/MicroLens_1M_x1/QIN_variety_v9_001_2c8f7a99.model
+2025-03-10 15:32:53,695 P100861 INFO ****** Validation evaluation ******
+2025-03-10 15:32:56,416 P100861 INFO [Metrics] AUC: 0.969521 - logloss: 0.332417
+2025-03-10 15:32:56,417 P100861 INFO Test scoring...
+2025-03-10 15:32:56,417 P100861 INFO Loading datasets...
+2025-03-10 15:32:58,454 P100861 INFO Test samples: total/379142, blocks/1
+2025-03-10 15:32:58,454 P100861 INFO Loading test data done.
+2025-03-10 15:33:13,052 P100861 INFO Writing results...
+2025-03-10 15:33:15,245 P100861 INFO All done.

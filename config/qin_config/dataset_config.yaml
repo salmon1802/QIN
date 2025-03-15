@@ -1,0 +1,53 @@
+MicroLens_1M_x1:
+    data_root: ./data/
+    data_format: parquet
+    train_data: ./data/MicroLens_1M_x1/train.parquet
+    valid_data: ./data/MicroLens_1M_x1/valid.parquet
+    test_data: ./data/MicroLens_1M_x1/test.parquet
+    item_info: ./data/MicroLens_1M_x1/item_info.parquet
+    rebuild_dataset: False
+    feature_cols:
+        - {name: user_id, active: True, dtype: int, type: meta}
+        - {name: item_seq, active: True, dtype: int, type: meta}
+        - {name: likes_level, active: True, dtype: int, type: categorical, vocab_size: 11}
+        - {name: views_level, active: True, dtype: int, type: categorical, vocab_size: 11}
+        - {name: item_id, active: True, dtype: int, type: categorical, vocab_size: 91718, source: item}
+        - {name: item_tags, active: True, dtype: int, type: sequence, max_len: 5, vocab_size: 11740, source: item}
+        - {name: item_emb_d128, active: True, dtype: float, type: embedding, source: item, embedding_dim: 128}
+    label_col: {name: label, dtype: float}
+
+MicroLens_1M_x1_with_level_feature:
+    data_format: parquet
+    data_root: ./data/
+    feature_cols:
+    - {active: true, dtype: int, name: user_id, type: categorical, vocab_size: 1000001}
+    - {active: true, dtype: int, name: item_seq, type: meta}
+    - {active: true, dtype: int, name: likes_level, type: categorical, vocab_size: 11}
+    - {active: true, dtype: int, name: views_level, type: categorical, vocab_size: 11}
+    - {active: true, dtype: int, name: item_id, source: item, type: categorical, vocab_size: 91718}
+    - {active: true, dtype: int, max_len: 5, name: item_tags, source: item, type: sequence, vocab_size: 11740}
+    - {active: true, dtype: float, embedding_dim: 128, name: item_emb_d128, source: item,  type: embedding}
+    item_info: ./data/MicroLens_1M_x1/item_info_add_level_feature.parquet
+    label_col: {dtype: float, name: label}
+    rebuild_dataset: false
+    test_data: ./data/MicroLens_1M_x1/test.parquet
+    train_data: ./data/MicroLens_1M_x1/train.parquet
+    valid_data: ./data/MicroLens_1M_x1/valid.parquet
+
+MicroLens_1M_x1_with_level_feature_wo_user_id:
+    data_format: parquet
+    data_root: ./data/
+    feature_cols:
+    - {active: true, dtype: int, name: user_id, type: meta}
+    - {active: true, dtype: int, name: item_seq, type: meta}
+    - {active: true, dtype: int, name: likes_level, type: categorical, vocab_size: 11}
+    - {active: true, dtype: int, name: views_level, type: categorical, vocab_size: 11}
+    - {active: true, dtype: int, name: item_id, source: item, type: categorical, vocab_size: 91718}
+    - {active: true, dtype: int, max_len: 5, name: item_tags, source: item, type: sequence, vocab_size: 11740}
+    - {active: true, dtype: float, embedding_dim: 128, name: item_emb_d128, source: item,  type: embedding}
+    item_info: ./data/MicroLens_1M_x1/item_info_add_level_feature.parquet
+    label_col: {dtype: float, name: label}
+    rebuild_dataset: false
+    test_data: ./data/MicroLens_1M_x1/test.parquet
+    train_data: ./data/MicroLens_1M_x1/train.parquet
+    valid_data: ./data/MicroLens_1M_x1/valid.parquet

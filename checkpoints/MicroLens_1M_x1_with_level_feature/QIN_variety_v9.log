@@ -1,0 +1,112 @@
+2025-03-15 17:34:32,433 P395725 INFO FuxiCTR version: 2.3.7
+2025-03-15 17:34:32,434 P395725 INFO Params: {
+    "accumulation_steps": "1",
+    "batch_norm": "True",
+    "batch_size": "8192",
+    "data_format": "parquet",
+    "data_root": "./data/",
+    "dataset_id": "MicroLens_1M_x1_with_level_feature",
+    "debug_mode": "False",
+    "early_stop_patience": "3",
+    "embedding_dim": "128",
+    "embedding_regularizer": "0.0002",
+    "epochs": "100",
+    "eval_steps": "None",
+    "factor": "0.5",
+    "feature_cols": "[{'active': True, 'dtype': 'int', 'name': 'user_id', 'type': 'categorical', 'vocab_size': 1000001}, {'active': True, 'dtype': 'int', 'name': 'item_seq', 'type': 'meta'}, {'active': True, 'dtype': 'int', 'name': 'likes_level', 'type': 'categorical', 'vocab_size': 11}, {'active': True, 'dtype': 'int', 'name': 'views_level', 'type': 'categorical', 'vocab_size': 11}, {'active': True, 'dtype': 'int', 'name': 'item_id', 'source': 'item', 'type': 'categorical', 'vocab_size': 91718}, {'active': True, 'dtype': 'int', 'max_len': 5, 'name': 'item_tags', 'source': 'item', 'type': 'sequence', 'vocab_size': 11740}, {'active': True, 'dtype': 'float', 'embedding_dim': 128, 'name': 'item_emb_d128', 'source': 'item', 'type': 'embedding'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gpu": "1",
+    "group_id": "user_id",
+    "item_info": "./data/MicroLens_1M_x1/item_info_add_level_feature.parquet",
+    "label_col": "{'dtype': 'float', 'name': 'label'}",
+    "learning_rate": "0.002",
+    "loss": "binary_crossentropy",
+    "max_len": "64",
+    "metrics": "['AUC', 'logloss']",
+    "model": "QIN_variety_v9",
+    "model_id": "QIN_variety_v9",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.1",
+    "net_regularizer": "0",
+    "num_layers": "4",
+    "num_row": "3",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "rebuild_dataset": "False",
+    "save_best_only": "True",
+    "seed": "20242025",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "./data/MicroLens_1M_x1/test.parquet",
+    "train_data": "./data/MicroLens_1M_x1/train.parquet",
+    "use_features": "None",
+    "valid_data": "./data/MicroLens_1M_x1/valid.parquet",
+    "verbose": "1"
+}
+2025-03-15 17:34:32,435 P395725 INFO Set up feature processor...
+2025-03-15 17:34:32,435 P395725 INFO Fit feature processor...
+2025-03-15 17:34:32,435 P395725 INFO Processing column: {'active': True, 'dtype': 'int', 'name': 'user_id', 'type': 'categorical', 'vocab_size': 1000001}
+2025-03-15 17:34:32,820 P395725 INFO Processing column: {'active': True, 'dtype': 'int', 'name': 'item_seq', 'type': 'meta'}
+2025-03-15 17:34:32,820 P395725 INFO Processing column: {'active': True, 'dtype': 'int', 'name': 'likes_level', 'type': 'categorical', 'vocab_size': 11}
+2025-03-15 17:34:32,820 P395725 INFO Processing column: {'active': True, 'dtype': 'int', 'name': 'views_level', 'type': 'categorical', 'vocab_size': 11}
+2025-03-15 17:34:32,820 P395725 INFO Processing column: {'active': True, 'dtype': 'int', 'name': 'item_id', 'source': 'item', 'type': 'categorical', 'vocab_size': 91718}
+2025-03-15 17:34:32,854 P395725 INFO Processing column: {'active': True, 'dtype': 'int', 'max_len': 5, 'name': 'item_tags', 'source': 'item', 'type': 'sequence', 'vocab_size': 11740}
+2025-03-15 17:34:32,858 P395725 INFO Processing column: {'active': True, 'dtype': 'float', 'embedding_dim': 128, 'name': 'item_emb_d128', 'source': 'item', 'type': 'embedding'}
+2025-03-15 17:34:32,859 P395725 INFO Set column index...
+2025-03-15 17:34:32,859 P395725 INFO Save feature_map to json: ./data/MicroLens_1M_x1_with_level_feature/feature_map.json
+2025-03-15 17:34:32,859 P395725 INFO Pickle feature_encode: ./data/MicroLens_1M_x1_with_level_feature/feature_processor.pkl
+2025-03-15 17:34:32,908 P395725 INFO Save feature_vocab to json: ./data/MicroLens_1M_x1_with_level_feature/feature_vocab.json
+2025-03-15 17:34:34,805 P395725 INFO Set feature processor done.
+2025-03-15 17:34:34,806 P395725 INFO Load feature_map from json: ./data/MicroLens_1M_x1_with_level_feature/feature_map.json
+2025-03-15 17:34:34,806 P395725 INFO Set column index...
+2025-03-15 17:34:34,807 P395725 INFO Feature specs: {
+    "item_emb_d128": "{'source': 'item', 'type': 'embedding', 'embedding_dim': 128}",
+    "item_id": "{'source': 'item', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 91718}",
+    "item_seq": "{'type': 'meta'}",
+    "item_tags": "{'source': 'item', 'type': 'sequence', 'feature_encoder': 'layers.MaskedAveragePooling()', 'padding_idx': 0, 'max_len': 5, 'vocab_size': 11740}",
+    "likes_level": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 11}",
+    "user_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 1000001}",
+    "views_level": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 11}"
+}
+2025-03-15 17:34:40,589 P395725 INFO Total number of parameters: 177801093.
+2025-03-15 17:34:40,590 P395725 INFO Loading datasets...
+2025-03-15 17:34:46,763 P395725 INFO Train samples: total/3600000, blocks/1
+2025-03-15 17:34:47,495 P395725 INFO Validation samples: total/10000, blocks/1
+2025-03-15 17:34:49,001 P395725 INFO Test samples: total/379142, blocks/1
+2025-03-15 17:34:49,001 P395725 INFO Loading data done.
+2025-03-15 17:34:49,002 P395725 INFO Start training: 440 batches/epoch
+2025-03-15 17:34:49,002 P395725 INFO ************ Epoch=1 start ************
+2025-03-15 17:38:58,921 P395725 INFO Train loss: 0.154763
+2025-03-15 17:38:58,921 P395725 INFO Evaluation @epoch 1 - batch 440: 
+2025-03-15 17:39:01,057 P395725 INFO [Metrics] AUC: 0.983766 - logloss: 0.136863
+2025-03-15 17:39:01,057 P395725 INFO Save best model: monitor(max)=0.983766
+2025-03-15 17:39:02,737 P395725 INFO ************ Epoch=1 end ************
+2025-03-15 17:43:10,903 P395725 INFO Train loss: 0.178223
+2025-03-15 17:43:10,903 P395725 INFO Evaluation @epoch 2 - batch 440: 
+2025-03-15 17:43:12,792 P395725 INFO [Metrics] AUC: 0.982705 - logloss: 0.120233
+2025-03-15 17:43:12,793 P395725 INFO Monitor(max)=0.982705 STOP!
+2025-03-15 17:43:12,793 P395725 INFO Reduce learning rate on plateau: 0.001000
+2025-03-15 17:43:12,915 P395725 INFO ************ Epoch=2 end ************
+2025-03-15 17:46:53,018 P395725 INFO Train loss: 0.113374
+2025-03-15 17:46:53,018 P395725 INFO Evaluation @epoch 3 - batch 440: 
+2025-03-15 17:46:55,029 P395725 INFO [Metrics] AUC: 0.981941 - logloss: 0.147143
+2025-03-15 17:46:55,029 P395725 INFO Monitor(max)=0.981941 STOP!
+2025-03-15 17:46:55,030 P395725 INFO Reduce learning rate on plateau: 0.000500
+2025-03-15 17:46:55,148 P395725 INFO ************ Epoch=3 end ************
+2025-03-15 17:50:23,144 P395725 INFO Train loss: 0.081121
+2025-03-15 17:50:23,145 P395725 INFO Evaluation @epoch 4 - batch 440: 
+2025-03-15 17:50:25,198 P395725 INFO [Metrics] AUC: 0.982262 - logloss: 0.159353
+2025-03-15 17:50:25,199 P395725 INFO Monitor(max)=0.982262 STOP!
+2025-03-15 17:50:25,199 P395725 INFO Reduce learning rate on plateau: 0.000250
+2025-03-15 17:50:25,199 P395725 INFO ********* Epoch=4 early stop *********
+2025-03-15 17:50:25,329 P395725 INFO Training finished.
+2025-03-15 17:50:25,330 P395725 INFO Load best model: /mnt/public_wd/lhh/code_wd/www2025/checkpoints/MicroLens_1M_x1_with_level_feature/QIN_variety_v9.model
+2025-03-15 17:50:25,765 P395725 INFO ****** Validation evaluation ******
+2025-03-15 17:50:27,756 P395725 INFO [Metrics] AUC: 0.983766 - logloss: 0.136863
+2025-03-15 17:50:27,756 P395725 INFO Test scoring...
+2025-03-15 17:50:42,752 P395725 INFO Writing results...
+2025-03-15 17:50:44,374 P395725 INFO All done.
