@@ -40,4 +40,9 @@ source activate fuxictr_www
     ```
     python run_expid.py
     ```
-The parameters in __./config/qin_config/__ are set to the optimal hyperparameters in the environment described above.
+The parameters QIN_variety_v9 in __./config/qin_config/model_config.yaml__ are set to the optimal hyperparameters in the environment described above.
+
+#### Tips
+It is worth mentioning that after our tests, we find that although the parameter num_row = 4 achieves the best performance in the above environments, there is training instability in some environments.
+
+When this happens, we suggest that sacrificing some performance in favor of setting num_row = 3 reproduces the results well.
