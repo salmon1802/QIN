@@ -1,5 +1,5 @@
 ## Official implementation code of DISCO.AHU team for WWW2025_MMCTR_Challenge
-## Winning 2nd Place in Multimodal CTR Prediction Challenge Track
+### 🔥 Winning 2nd Place in Multimodal CTR Prediction Challenge Track
 
 ## 🔥 Follow to perfectly reproduce the results of this code.
 
