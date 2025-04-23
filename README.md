@@ -1,7 +1,7 @@
 ## Official implementation code of DISCO.AHU team
-### 🔥 Winning 2nd Place in WWW2025 Multimodal CTR Prediction Challenge Track
+## 🔥 Winning 2nd Place in WWW2025 Multimodal CTR Prediction Challenge Track
 
-## 🔥 Follow to perfectly reproduce the results of this code.
+### 🔥 Follow to perfectly reproduce the results of this code.
 
 🔥 To facilitate reproducibility, we share the model checkpoints on Hugging Face: https://huggingface.co/salmon1802/QIN/tree/main
 
