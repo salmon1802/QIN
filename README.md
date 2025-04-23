@@ -2,6 +2,7 @@
 ### 🔥 Winning 2nd Place in WWW2025 Multimodal CTR Prediction Challenge Track
 
 ## 🔥 Follow to perfectly reproduce the results of this code.
+## 🔥 To facilitate reproducibility, we share the model checkpoints on Hugging Face: https://huggingface.co/salmon1802/QIN/tree/main
 
 ##### In . /checkpoints and . /submission folders have our run logs and submission files, respectively.
 
@@ -47,3 +48,5 @@ The parameters QIN_variety_v9 in __./config/qin_config/model_config.yaml__ are s
 It is worth mentioning that after our tests, we find that although the parameter num_row = 4 achieves the best performance in the above environments, there is training instability in some environments.
 
 When this happens, we suggest that sacrificing some performance in favor of setting num_row = 3 reproduces the results well.
+
+
