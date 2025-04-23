@@ -3,11 +3,9 @@
 
 ### 🔥 Follow to perfectly reproduce the results of this code.
 
-🔥 To facilitate reproducibility, we share the model checkpoints on Hugging Face: https://huggingface.co/salmon1802/QIN/tree/main
-
-##### In . /checkpoints and . /submission folders have our run logs and submission files, respectively.
-
-##### This submission can be reproduced manually by following the actions below, or by directly using the one-click run script run.sh
+- To facilitate reproducibility, we share the model checkpoints on Hugging Face: https://huggingface.co/salmon1802/QIN/tree/main
+- In ./checkpoints and ./submission folders have our run logs and submission files, respectively.
+- This submission can be reproduced manually by following the actions below, or by directly using the one-click run script run.sh
 
 ### Data Preparation
 
