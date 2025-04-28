@@ -48,4 +48,14 @@ It is worth mentioning that after our tests, we find that although the parameter
 
 When this happens, we suggest that sacrificing some performance in favor of setting num_row = 3 reproduces the results well.
 
+## Citation
+If you find our code helpful for your research, please cite the following paper:
 
+```bibtex
+@article{li2025quadratic,
+  title={Quadratic Interest Network for Multimodal Click-Through Rate Prediction},
+  author={Li, Honghao and Li, Hanwei and Zhang, Jing and Zhang, Yi and Yu, Ziniu and Sang, Lei and Zhang, Yiwen},
+  journal={arXiv preprint arXiv:2504.17699},
+  year={2025}
+}
+```
