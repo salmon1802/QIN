@@ -1,4 +1,8 @@
 ## Official implementation code of DISCO.AHU team
+![image](https://github.com/user-attachments/assets/4dc4af1f-a8a7-4979-9e42-fc3dfed1a731)
+
+
+
 ## 🔥 Winning 2nd Place in WWW2025 Multimodal CTR Prediction Challenge Track
 
 ### 🔥 Follow to perfectly reproduce the results of this code.
