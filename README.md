@@ -4,6 +4,7 @@
 
 
 ## 🔥 Winning 2nd Place in WWW2025 Multimodal CTR Prediction Challenge Track
+Competition Official Website: https://erel-mir.github.io/challenge/results/
 
 ### 🔥 Follow to perfectly reproduce the results of this code.
 
